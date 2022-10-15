@@ -13,7 +13,7 @@ export default function Gameboard() {
     const [nbrOfThrowsLeft, setNbrOfThrowsLeft] = useState(NBR_OF_THROWS);
     const [status, setStatus] = useState('');
     const [total, setTotal] = useState(0);
-    const [sum, setSum] = useState(0);
+    // const [sum, setSum] = useState(0);
     const [selectedDices, setSelectedDices] =
         useState(new Array(NBR_OF_DICES).fill(false));
 
@@ -49,14 +49,11 @@ function selectDice(i) {
 
 function throwDices(selectDice) {
 
-let sum = 0; 
   for (let i = 0; i < NBR_OF_DICES; i++) {
     if (!selectedDices[i]) {
       let randomNumber = Math.floor(Math.random() * 6 + 1);
       board[i] = 'dice-' + randomNumber;
-      sum = board[randomNumber];
   }
-    setSum(sum);
   }
   setNbrOfThrowsLeft(nbrOfThrowsLeft-1);
 }
@@ -94,7 +91,7 @@ return(
               <View style={styles.flex}>{row}</View>
       <Text style={styles.gameinfo}> Throws left: {nbrOfThrowsLeft}</Text> 
       <Text style={styles.gameinfo}>{status}</Text> 
-      <Text style={styles.gameinfo}>Total sum is:{sum}</Text> 
+      {/* <Text style={styles.gameinfo}>Total sum is:{sum}</Text>  */}
       <Pressable style={styles.button}
         onPress={() => throwDices()}>
           <Text style={styles.buttonText}>
@@ -103,12 +100,13 @@ return(
       </Pressable>
 
       <Pressable style={styles.button2}
-        onPress={() => selectDice('dice-1')}>
+        onPress={() => selectDice() }>
           <Text style={styles.buttonText}>
             1
           </Text>
       </Pressable>
-            <Pressable style={styles.button2}
+
+            {/* <Pressable style={styles.button2}
         onPress={() => selectDice(2)}>
           <Text style={styles.buttonText}>
             2
@@ -137,7 +135,7 @@ return(
           <Text style={styles.buttonText}>
             6
           </Text>
-      </Pressable>
+      </Pressable> */}
       
       
 
