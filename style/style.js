@@ -6,14 +6,12 @@ export default StyleSheet.create({
     backgroundColor: 'rgb(95, 215, 246)'
   },
   header: {
-    marginTop: 60,
+    marginTop: 80,
     marginBottom: 10,
-    backgroundColor: 'rgb(47, 246, 48)',
     flexDirection: 'row',
   },
   footer: {
     marginTop: 20,
-    backgroundColor: 'rgb(47, 246, 48)',
     flexDirection: 'row'
   },
   title: {
